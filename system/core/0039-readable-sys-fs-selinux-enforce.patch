@@ -1,0 +1,25 @@
+From e09f9e9a0a8ec304ff3fcef1e0c52f8bc9f41fa2 Mon Sep 17 00:00:00 2001
+From: Vlad G <b100dian@gmail.com>
+Date: Sat, 15 May 2021 16:55:15 +0300
+Subject: [PATCH] readable /sys/fs/selinux/enforce
+
+Change-Id: I7bd2be5c6af0ff1508bb6b1e3f4be166db7ced9c
+---
+ rootdir/init.rc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/rootdir/init.rc b/rootdir/init.rc
+index 1266ec3ce..25a100723 100644
+--- a/rootdir/init.rc
++++ b/rootdir/init.rc
+@@ -407,6 +407,7 @@ on post-fs
+ 
+     # make the selinux kernel policy world-readable
+     chmod 0444 /sys/fs/selinux/policy
++    chmod 0644 /sys/fs/selinux/enforce
+ 
+     # create the lost+found directories, so as to enforce our permissions
+     mkdir /cache/lost+found 0770 root root
+-- 
+2.31.1
+
